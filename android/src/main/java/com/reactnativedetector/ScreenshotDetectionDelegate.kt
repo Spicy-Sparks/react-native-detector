@@ -10,13 +10,15 @@ class ScreenshotDetectionDelegate(val context: Context, val listener: Screenshot
     lateinit var contentObserver: ContentObserver
 
     var isListening = false
+    var lastUri = ""
 
     fun startScreenshotDetection() {
         contentObserver = object : ContentObserver(Handler()) {
             override fun onChange(selfChange: Boolean, uri: Uri?) {
                 super.onChange(selfChange, uri)
-                if(uri != null && uri.toString().endsWith("/media"))
+                if(uri != null && (uri.toString().endsWith("/media") || uri.toString() == lastUri))
                     return
+                lastUri = uri.toString()
                 onScreenCaptured()
             }
         }
