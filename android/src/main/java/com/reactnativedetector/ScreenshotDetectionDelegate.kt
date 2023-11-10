@@ -24,6 +24,8 @@ class ScreenshotDetectionDelegate(val context: Context, val listener: Screenshot
         contentObserver = object : ContentObserver(Handler()) {
             override fun onChange(selfChange: Boolean, uri: Uri?) {
                 super.onChange(selfChange, uri)
+                if(uri != null && uri.toString().endsWith("/media"))
+                    return
                 onScreenCaptured()
             }
         }
