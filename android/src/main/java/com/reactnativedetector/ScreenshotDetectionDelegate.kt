@@ -1,19 +1,10 @@
 package com.reactnativedetector
 
-import android.Manifest
 import android.content.Context
 import android.database.ContentObserver
 import android.net.Uri
 import android.os.Handler
 import android.provider.MediaStore
-import android.content.pm.PackageManager
-import android.Manifest.permission
-import android.Manifest.permission.READ_EXTERNAL_STORAGE
-import androidx.core.content.ContextCompat
-import android.database.Cursor
-import android.util.Log
-import java.lang.Exception
-
 
 class ScreenshotDetectionDelegate(val context: Context, val listener: ScreenshotDetectionListener) {
     lateinit var contentObserver: ContentObserver
