@@ -23,7 +23,7 @@ class DetectorModule(val reactContext: ReactApplicationContext) : ReactContextBa
         screenshotDetectionDelegate.stopScreenshotDetection()
     }
 
-    override fun onScreenCaptured(path: String) {
+    override fun onScreenCaptured() {
         reactContext
                 .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter::class.java)
                 .emit("UIApplicationUserDidTakeScreenshotNotification", null)

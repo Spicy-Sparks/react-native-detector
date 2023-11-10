@@ -1,5 +1,5 @@
 {
-  "name": "react-native-detector",
+  "name": "@spicysparks/react-native-detector",
   "version": "0.2.3",
   "description": "a screenshot detector for react native",
   "main": "lib/commonjs/index",
